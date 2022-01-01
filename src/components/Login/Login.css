@@ -1,0 +1,70 @@
+.pres_container {
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 20px;
+  }
+  .registerLogo img{
+    width: 15%;
+    /* height: 10px; */
+  }
+  .pres_container .left_section_pres_login {
+    padding: 50px;
+  }
+  .pres_container .left_section_pres_login img {
+    width: 70%;
+    align-items: right;
+    margin-left: 70px;
+  }
+  .pres_container .left_section_pres_login h1 {
+    color: #bd095a;
+    /* font-weight: bold; */
+    text-align: left;
+    margin-left: 20%;
+  }
+  .pres_container .left_section_pres_login h4 {
+    /* font-family: 'Kalpurush', sans-serif; */
+    /* text-align: left; */
+    /* margin-right: 100%; */
+    /* width: 50px; */
+    margin-left: 20%;
+    text-align: left;
+    font-size: 22px;
+  }
+  .pres_container .right_section_pres {
+    border-left: 1px solid #bd095a;
+    /* padding-left: 0%; */
+    /* padding-top: 10%; */
+    height: 300px;
+    margin-top: 100px;
+  }
+
+  .pres_container .right_section_pres h4 {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 33%;
+  }
+
+  .pres_container .right_section_pres input {
+    background-color: #bd095a;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 2px;
+    height: 40px;
+    width: 230px;
+    border: 2px solid #bd095a;
+  }
+  .pres_container .right_section_pres input:focus {
+    background-color: #bd095a;
+    color: #ffffff;
+  }
+
+  .registerButton{
+      border-radius: 10px;
+      width: 18%;
+      margin-top: 15px;
+      background-image: linear-gradient(to right, #6c0534, #cc0a61);
+      color: white;
+      border: 0;
+  }

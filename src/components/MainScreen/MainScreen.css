@@ -1,0 +1,16 @@
+@import url('https://fonts.maateen.me/kalpurush/font.css');
+.main-screen{
+    width: 100%;
+    height: 74vh;
+    background: #ffffff;
+}
+body {
+    font-family: 'Kalpurush', Arial, sans-serif !important;
+}
+.wrapper{
+    width: 100%;
+}
+
+.footer{
+    height: 10vh;
+}

@@ -1,0 +1,9 @@
+.card{
+    /* background: #3c4043; */
+    background-image: linear-gradient(#7D1558, #04050D);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100%;
+}

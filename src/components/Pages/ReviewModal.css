@@ -1,0 +1,30 @@
+.feedback_text {
+  text-decoration: underline;
+  text-decoration-color: rgb(233, 30, 223);
+  text-align: center;
+  text-underline-offset: 5px;
+  font-weight: bold;
+}
+.rating {
+  align-items: center;
+  align-content: center;
+  margin-top: 10%;
+  transform: scale(1.4, 1.4) !important;
+}
+.modal_form {
+  margin-top: 10px;
+  width: 140%;
+  margin-left: -20%;
+}
+.modal_form h6 {
+  font-weight: bold;
+}
+.modal_form button {
+  margin-top: 5px;
+  border-radius: 7px;
+  border: 1px solid #ffb903;
+  background-color: #ffb903;
+  margin: 10px;
+  font-weight: bold;
+  padding: 0px 12px 0px 12px;
+}

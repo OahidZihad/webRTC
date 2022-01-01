@@ -1,0 +1,33 @@
+.meeting-footer{
+    /* background: #202124;  */
+    height: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meeting-icons{
+    color: white;
+    /* border-radius: 50%; */
+    /* background:#3c4043; */
+    /* border-radius: 50%; */
+    background-image: linear-gradient(#82165B, #04050D);
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.active {
+  /* background-color:   #ea4335; */
+  background-image: linear-gradient(#82165B, #04050D);
+}
+
+div[disabled]
+{
+  pointer-events: none;
+  opacity: 0.3;
+}
