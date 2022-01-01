@@ -3,7 +3,7 @@ import firepadRef, { db } from "../server/firebase";
 // import firepadRef, { db, userName } from "../server/firebase";
 // import firepadRef, { db, usePrompt } from "../server/firebase";
 // import "../App.css";
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 // import {
 //   setMainStream,
@@ -22,14 +22,16 @@ import {
 import { connect } from "react-redux";
 
 const Main = (props) => {
-//   const userReducer = useSelector((state) => state.userReducer);
-//   console.log("user Reducer ***", userReducer)
-//   const dispatch = useDispatch();
+  //   const userReducer = useSelector((state) => state.userReducer);
+  //   console.log("user Reducer ***", userReducer)
+  //   const dispatch = useDispatch();
 
-//   useEffect(() => {
-//     // dispatch(SliderAction())
-//     dispatch(userReducer.currentUser)
-// }, []);
+  //   useEffect(() => {
+  //     // dispatch(SliderAction())
+  //     dispatch(userReducer.currentUser)
+  // }, []);
+
+  console.log(props);
 
   const getUserStream = async () => {
     const localStream = await navigator.mediaDevices.getUserMedia({

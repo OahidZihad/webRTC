@@ -39,7 +39,6 @@ const DoctorForm = (props) => {
   const { doctor } = doctorDetail;
   console.log("doctorDetailss * * *", doctor);
 
-
   // const userDetails = useSelector((state) => state.userDetails);
   // const { user } = userDetails;
   // const userId = user.id;
@@ -49,14 +48,13 @@ const DoctorForm = (props) => {
     dispatch(listDoctorDetails(id));
   }, []);
 
+  const patientDetails = useSelector((state) => state.patientViewGet);
+  const { loading, patientView, error } = patientDetails;
+  console.log(patientView);
 
-  useEffect(()=>{
-    dispatch(getPatientView)
-  },[])
-
-  const patientDetails = useSelector(state=>state.patientViewGet)
-  const {loading, patientView} = patientDetails;
-  console.log(patientView)
+  useEffect(() => {
+    dispatch(getPatientView);
+  }, []);
 
   const history = useHistory();
   const HandleClickSession = (e) => {
@@ -75,8 +73,8 @@ const DoctorForm = (props) => {
   }
 
   const handleSubmit = (e) => {
-  const docID = doctor[0].id;
-  console.log("docID",docID)
+    const docID = doctor[0].id;
+    console.log("docID", docID);
     e.preventDefault();
     dispatch(
       createDoctorAppointment(
@@ -91,13 +89,17 @@ const DoctorForm = (props) => {
     );
   };
 
-  const postDoctorAppointment = useSelector((state) => state.createDoctorAppointment);
+  const postDoctorAppointment = useSelector(
+    (state) => state.createDoctorAppointment
+  );
   // console.log("postDoctorAppointment", postDoctorAppointment.doctorAppointment?.message)
 
-  if(postDoctorAppointment.doctorAppointment?.message === "Session booked successfully"){
+  if (
+    postDoctorAppointment.doctorAppointment?.message ===
+    "Session booked successfully"
+  ) {
     history.push("/countdown");
-  }else{
-
+  } else {
   }
 
   const handleFileChange = (e) => {
@@ -117,6 +119,7 @@ const DoctorForm = (props) => {
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
                 <p style={{ fontWeight: "900" }}>স্বাগতম, {patientView.Name}</p>
+                {/* <p style={{ fontWeight: "900" }}>স্বাগতম, {patientView.Name}</p> */}
               </Navbar.Text>
             </Navbar.Collapse>
           </Container>

@@ -14,7 +14,7 @@ import { useEffect } from "react";
 //   removeParticipant,
 //   updateParticipant,
 // } from "./store/actioncreator";
-import { connect } from "react-redux";
+import { connect, Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./components/Main";
 import Register from "./components/Login/Register";
@@ -31,7 +31,10 @@ import PatientWaitingList from "./components/DoctorPortal/PatientWaitingList";
 import TreatmentDescription from "./components/DoctorPortal/TreatmentDescription";
 import PatientPortal from "./components/PatientPortal/PatientPortal";
 import PaymentLoading from "./components/Payment/PaymentLoading";
+import { createStore } from "redux";
+import { userReducer } from "./redux/reducers/OnlineAppoinmentDoctorReducers";
 
+export const store2 = createStore(userReducer);
 function App(props) {
   // const getUserStream = async () => {
   //   const localStream = await navigator.mediaDevices.getUserMedia({
@@ -107,10 +110,10 @@ function App(props) {
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/PaymentLoading">
+          <Route path="/PaymentLoading">
             <PaymentLoading></PaymentLoading>
           </Route>
-        <Route path="/patientPortal">
+          <Route path="/patientPortal">
             <PatientPortal></PatientPortal>
           </Route>
           <Route path="/treatmentDescription">
@@ -164,9 +167,11 @@ function App(props) {
           {/* <Route path="/videochat">
             <MainScreen />
           </Route> */}
-          <Route path="/videochat">
-            <Main />
-          </Route>
+          <Provider store={store2}>
+            <Route path="/videochat">
+              <Main></Main>
+            </Route>
+          </Provider>
         </Switch>
       </Router>
     </div>

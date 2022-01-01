@@ -13,18 +13,32 @@ import {
   userLoginReducer,
 } from "./redux/reducers/userReducers";
 
-// import store from './redux/store';
+import store from "./redux/store";
+import Main from "./components/Main";
+import { Switch, Router, Route } from "react-router-dom";
 
-// export const store2 = store;
+export const store3 = store;
 
-export const store2 = createStore(userReducer);
+// export const store2 = createStore(userReducer);
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={store2}>
+//       <App />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store2}>
+  [
+    <Provider store={store3}>
       <App />
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
+    // <Provider store={store2}>
+    //   <Main />
+    // </Provider>,
+  ],
   document.getElementById("root")
 );
 

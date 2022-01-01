@@ -6,17 +6,30 @@ import { composeWithDevTools } from "redux-devtools-extension";
 // import { userReducer } from "../store/reducer";
 // import { userReducer } from "../store/reducer";
 import { userReducer } from "./reducers/OnlineAppoinmentDoctorReducers";
-import { userLoginReducer, userRegisterReducer, userDetailsReducer } from "./reducers/userReducers";
-import { allDoctorReducer, doctorReducer, waitingPatientListReducer } from "./reducers/doctorReducers";
-import { doctorDetailReducers, doctorReviewCreateReducer, doctorReviewGetReducer, createDoctorAppointmentReducer } from "./reducers/doctorDetailReducer";
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userDetailsReducer,
+} from "./reducers/userReducers";
+import {
+  allDoctorReducer,
+  doctorReducer,
+  waitingPatientListReducer,
+} from "./reducers/doctorReducers";
+import {
+  doctorDetailReducers,
+  doctorReviewCreateReducer,
+  doctorReviewGetReducer,
+  createDoctorAppointmentReducer,
+} from "./reducers/doctorDetailReducer";
 import { createDoctorReducer } from "./reducers/doctorRegistrationReducer";
-import {getPatientViewReducer} from "./reducers/patientDetailReducer"
+import { getPatientViewReducer } from "./reducers/patientDetailReducer";
 
 const reducer = combineReducers({
   //   online appoinment
   //   OnlineAppoinmentDoctor: OnlineAppoinmentDoctorReducer,
   //   OnlineAppoinmentCategory: OnlineAppoinmentCategoryReducer
-  userReducer,
+  webRTC: userReducer,
   userRegister: userRegisterReducer,
   userLogin: userLoginReducer,
   userDetails: userDetailsReducer,
@@ -43,7 +56,6 @@ const reducer = combineReducers({
 
   //patient detail
   patientViewGet: getPatientViewReducer,
-
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

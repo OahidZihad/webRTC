@@ -1,11 +1,11 @@
 import firepadRef from "./firebase";
 // import { store } from "../index";
 // import store from "../redux/store";
-import { store2 } from "../index";
+// import { store2 } from "../index";
+import { store3 } from "../index";
+import { store2 } from "../App";
 // const store1 = store.getState();
-// console.log("store ******", store.getState())
 import { userReducer } from "../redux/reducers/OnlineAppoinmentDoctorReducers";
-
 
 const participantRef = firepadRef.child("participants");
 
@@ -45,10 +45,13 @@ export const initializeListensers = async (userId) => {
   currentUserRef.child("offers").on("child_added", async (snapshot) => {
     const data = snapshot.val();
     if (data?.offer) {
-      const store1 = userReducer
-      console.log(store1)
-      const pc = store2.getState().participants[data.offer.userId].peerConnection;
-      console.log(pc)
+      const store1 = store3;
+      console.log(store1);
+      const store4 = store2;
+      console.log(store4);
+      const pc =
+        store2.getState().participants[data.offer.userId].peerConnection;
+      console.log(pc);
       await pc.setRemoteDescription(new RTCSessionDescription(data.offer));
       await createAnswer(data.offer.userId, userId);
     }
@@ -57,10 +60,12 @@ export const initializeListensers = async (userId) => {
   currentUserRef.child("offerCandidates").on("child_added", (snapshot) => {
     const data = snapshot.val();
     if (data.userId) {
-      const store1 = store2;
-      console.log(store1)
+      const store1 = store3;
+      console.log(store1);
+      const store4 = store2;
+      console.log(store4);
       const pc = store2.getState().participants[data.userId].peerConnection;
-      console.log(pc)
+      console.log(pc);
       pc.addIceCandidate(new RTCIceCandidate(data));
     }
   });
@@ -68,10 +73,13 @@ export const initializeListensers = async (userId) => {
   currentUserRef.child("answers").on("child_added", (snapshot) => {
     const data = snapshot.val();
     if (data?.answer) {
-      const store1 = store2;
-      console.log(store1)
-      const pc = store2.getState().participants[data.answer.userId].peerConnection;
-      console.log(pc)
+      const store1 = store3;
+      console.log(store1);
+      const store4 = store2;
+      console.log(store4);
+      const pc =
+        store2.getState().participants[data.answer.userId].peerConnection;
+      console.log(pc);
       const answerDescription = new RTCSessionDescription(data.answer);
       pc.setRemoteDescription(answerDescription);
     }
@@ -80,18 +88,22 @@ export const initializeListensers = async (userId) => {
   currentUserRef.child("answerCandidates").on("child_added", (snapshot) => {
     const data = snapshot.val();
     if (data.userId) {
-      const store1 = store2;
-      console.log(store1)
+      const store1 = store3;
+      console.log(store1);
+      const store4 = store2;
+      console.log(store4);
       const pc = store2.getState().participants[data.userId].peerConnection;
-      console.log(pc)
+      console.log(pc);
       pc.addIceCandidate(new RTCIceCandidate(data));
     }
   });
 };
 
 const createAnswer = async (otherUserId, userId) => {
-  const store1 = store2;
-      console.log(store1)
+  const store1 = store3;
+  console.log(store1);
+  const store4 = store2;
+  console.log(store4);
   const pc = store2.getState().participants[otherUserId].peerConnection;
   const participantRef1 = participantRef.child(otherUserId);
   pc.onicecandidate = (event) => {
@@ -114,9 +126,7 @@ const createAnswer = async (otherUserId, userId) => {
 };
 
 const peerConnection = () => {
-  return(
-    <></>
-  )
-}
+  return <></>;
+};
 
-export default peerConnection
+export default peerConnection;
